@@ -20,7 +20,7 @@ public class LevelDesigner : MonoBehaviour
 		public int rightMargin = 40;
 		public int squareSize = 40;
 		public float scaleSize = 0.8f;
-		//This is the floor Y value itself. If you increase this and the objects will on the air. The opposite will be underground.
+		//This is the floor Y value itself. If you increase this and the objects will on the air. The opposite will be underground.	
 		public float constantFloorYCordinate = 0.1274259f;
 		private Random rnd = new Random ();
 		// Use this for initialization
