@@ -47,13 +47,13 @@ public class LevelDesigner : MonoBehaviour
 										break;
 								}
 
-								if(marble != null)
-								{
-									//Let's reduce the size of the elements. They are too big.
-									marble.transform.localScale *= scaleSize;
-									marble.transform.position = Camera.main.ScreenToWorldPoint( new Vector3(i,j,0));
-									//Let's set the y ordinate in real world:
-									marble.transform.position = new Vector3(marble.transform.position.x,constantFloorYCordinate,marble.transform.position.z);
+								if (marble != null) {
+										//Let's reduce the size of the elements. They are too big.
+										marble.transform.localScale *= scaleSize;
+										Vector3 marblePosition = Camera.main.ScreenToWorldPoint (new Vector3 (i, j, 0));
+										marble.transform.position = new Vector3 (marblePosition.x, marblePosition.y, Mathf.CeilToInt (marblePosition.z));
+										//Let's set the y ordinate in real world:
+										marble.transform.position = new Vector3 (marble.transform.position.x, constantFloorYCordinate, marble.transform.position.z);
 								}
 
 						}
