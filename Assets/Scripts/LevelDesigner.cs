@@ -16,9 +16,9 @@ public class LevelDesigner : MonoBehaviour
 		//Here our screen margins for the setup:
 		public int topMargin = 40;
 		public int bottomMargin = 40;
-		public int leftMargin = 60;
+		public int leftMargin = 50;
 		public int rightMargin = 40;
-		public int squareSize = 40;
+		public int squareSize = 45;
 		public float scaleSize = 0.8f;
 		//This is the floor Y value itself. If you increase this and the objects will on the air. The opposite will be underground.	
 		public float constantFloorYCordinate = 0.1274259f;
@@ -51,7 +51,7 @@ public class LevelDesigner : MonoBehaviour
 										//Let's reduce the size of the elements. They are too big.
 										marble.transform.localScale *= scaleSize;
 										Vector3 marblePosition = Camera.main.ScreenToWorldPoint (new Vector3 (i, j, 0));
-										marble.transform.position = new Vector3 (marblePosition.x, marblePosition.y, Mathf.CeilToInt (marblePosition.z));
+					marble.transform.position = new Vector3 (Mathf.CeilToInt (marblePosition.x), marblePosition.y, Mathf.CeilToInt (marblePosition.z));
 										//Let's set the y ordinate in real world:
 										marble.transform.position = new Vector3 (marble.transform.position.x, constantFloorYCordinate, marble.transform.position.z);
 								}
